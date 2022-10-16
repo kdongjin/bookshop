@@ -1,5 +1,6 @@
 package bookStore;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.List;
@@ -77,6 +78,13 @@ public class BookstoreExam {
 
 			System.out.println("Enter the publication date.(yyyyMMdd)");
 			String date = scanner.nextLine();
+			String dateFormate = "yyyyMMdd";
+			boolean checkDateType = dateCheck(date, dateFormate);
+			if(!checkDateType) {
+				System.out.println("Please enter according to the date type(yyyyMMdd)");
+				return;
+			}
+			
 
 			System.out.println("Enter the price.");
 			int price = scanner.nextInt();
@@ -258,6 +266,17 @@ public class BookstoreExam {
 			return false;
 		}
 		return regex;
+	}
+	
+	public static boolean dateCheck(String date, String format) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat(format);
+		dateFormat.setLenient(false);
+		try {
+			dateFormat.parse(date);
+			return true;
+		} catch (Exception e) {
+			return false;
+		}
 	}
 
 	public static int menu() {
