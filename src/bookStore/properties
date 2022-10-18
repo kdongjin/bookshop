@@ -1,4 +1,4 @@
 driver=com.mysql.cj.jdbc.Driver
-url=jdbc:mysql://127.0.0.1:3306/bookstoreDB?serverTimezone=UTC
-userid=root
-password=123456
+url=jdbc:mysql://~~~~~~/bookstoreDB?serverTimezone=UTC
+userid=~~~~~
+password=~~~~~
